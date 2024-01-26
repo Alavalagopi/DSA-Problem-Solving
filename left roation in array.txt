@@ -1,0 +1,29 @@
+import java.util.*;
+public class Solution {
+    static int[] rotLeft(int[] a, int d) {
+        int n = a.length;
+        int[] rotatedArray = new int[n];
+        int target = d % n;
+        for (int i = 0; i < n; i++) {
+            int newIndex = (i + d % n) % n;
+            rotatedArray[i] = a[newIndex];
+        }
+        return rotatedArray;
+    }
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int d = obj.nextInt();
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = obj.nextInt();
+        }
+        int[] result = rotLeft(a, d);
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i]);
+            if (i != result.length - 1) {
+                System.out.print(" ");
+            }
+        }
+    }
+}
