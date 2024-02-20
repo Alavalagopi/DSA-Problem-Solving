@@ -1,0 +1,18 @@
+class Solution 
+{
+    static Pair getMinMax(long a[], long n)  
+    {
+         long min = a[0];
+         long max = a[0];
+         for(long size:a){
+             if(min>size){
+                 min = size;
+             }
+             if(max<size){
+                 max = size;
+             }
+         }
+          return new Pair(min,max);
+    }
+   
+}
