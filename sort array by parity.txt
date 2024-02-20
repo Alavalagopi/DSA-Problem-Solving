@@ -1,0 +1,14 @@
+class Solution {
+    public int[] sortArrayByParity(int[] number) { 
+        int evenPos=0;
+        for(int i=0; i<number.length; i++){
+            if(number[i]%2==0){
+                int temp=number[i];
+                number[i]=number[evenPos];
+                number[evenPos]=temp;
+                evenPos++;
+            }
+        }    
+        return number;
+    }
+}
